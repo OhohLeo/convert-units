@@ -43,6 +43,7 @@ test('measures', () => {
       'voltage',
       'volume',
       'volumeFlowRate',
+      'electricalConductivity',
     ];
   expect(actual.sort()).toEqual(expected.sort());
 });

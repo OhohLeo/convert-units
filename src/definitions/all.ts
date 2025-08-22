@@ -14,6 +14,10 @@ import charge, { ChargeSystems, ChargeUnits } from './charge.js';
 import current, { CurrentSystems, CurrentUnits } from './current.js';
 import digital, { DigitalSystems, DigitalUnits } from './digital.js';
 import each, { EachSystems, EachUnits } from './each.js';
+import electricalConductivity, {
+  ElectricalConductivitySystems,
+  ElectricalConductivityUnits,
+} from './electricalConductivity.js';
 import energy, { EnergySystems, EnergyUnits } from './energy.js';
 import force, { ForceSystems, ForceUnits } from './force.js';
 import frequency, { FrequencySystems, FrequencyUnits } from './frequency.js';
@@ -84,7 +88,8 @@ export type AllMeasuresSystems =
   | TimeSystems
   | VoltageSystems
   | VolumeSystems
-  | VolumeFlowRateSystems;
+  | VolumeFlowRateSystems
+  | ElectricalConductivitySystems;
 
 export type AllMeasuresUnits =
   | AccelerationUnits
@@ -116,7 +121,8 @@ export type AllMeasuresUnits =
   | TimeUnits
   | VoltageUnits
   | VolumeUnits
-  | VolumeFlowRateUnits;
+  | VolumeFlowRateUnits
+  | ElectricalConductivityUnits;
 
 export type AllMeasures =
   | 'acceleration'
@@ -148,7 +154,8 @@ export type AllMeasures =
   | 'time'
   | 'voltage'
   | 'volume'
-  | 'volumeFlowRate';
+  | 'volumeFlowRate'
+  | 'electricalConductivity';
 
 const allMeasures: Record<
   AllMeasures,
@@ -184,6 +191,7 @@ const allMeasures: Record<
   voltage,
   volume,
   volumeFlowRate,
+  electricalConductivity,
 };
 
 export default allMeasures;

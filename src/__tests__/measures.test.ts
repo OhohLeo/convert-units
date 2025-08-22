@@ -14,6 +14,7 @@ test('measures', () => {
   const actual = convert().measures(),
     expected = [
       'acceleration',
+      'acidity',
       'angle',
       'apparentPower',
       'area',

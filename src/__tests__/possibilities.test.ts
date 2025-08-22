@@ -3,6 +3,7 @@ import acceleration, {
   AccelerationSystems,
   AccelerationUnits,
 } from '../definitions/acceleration';
+import acidity, { AciditySystems, AcidityUnits } from '../definitions/acidity';
 import allMeasures, {
   AllMeasures,
   AllMeasuresSystems,
@@ -931,6 +932,8 @@ test('all possibilities', () => {
       'sm-gr',
       'st',
       'trio',
+      'pH',
+      'pOH',
     ];
   expect(actual.sort()).toEqual(expected.sort());
 });
@@ -981,5 +984,17 @@ test('electrical conductivity possibilities', () => {
       'nS/cm',
       'pS/cm',
     ];
+
+test('acidity possibilities', () => {
+  const convert = configureMeasurements<
+    'acidity',
+    AciditySystems,
+    AcidityUnits
+  >({
+    acidity,
+  });
+  const actual = convert().possibilities('acidity'),
+    expected = ['pH', 'pOH'];
+
   expect(actual.sort()).toEqual(expected.sort());
 });

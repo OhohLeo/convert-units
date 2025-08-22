@@ -18,6 +18,10 @@ import charge, { ChargeSystems, ChargeUnits } from '../definitions/charge';
 import current, { CurrentSystems, CurrentUnits } from '../definitions/current';
 import digital, { DigitalSystems, DigitalUnits } from '../definitions/digital';
 import each, { EachSystems, EachUnits } from '../definitions/each';
+import electricalConductivity, {
+  ElectricalConductivitySystems,
+  ElectricalConductivityUnits,
+} from '../definitions/electricalConductivity';
 import energy, { EnergySystems, EnergyUnits } from '../definitions/energy';
 import force, { ForceSystems, ForceUnits } from '../definitions/force';
 import frequency, {
@@ -696,6 +700,8 @@ test('all possibilities', () => {
       'dm3/min',
       'dm3/s',
       'dNm',
+      'dS/m',
+      'dS/cm',
       'ea',
       'dz',
       'fl-oz',
@@ -810,6 +816,9 @@ test('all possibilities', () => {
       'mcg',
       'mg',
       'mH2O',
+      'mS/m',
+      'mS/cm',
+      'μS/m',
       'mi',
       'mi2',
       'mil',
@@ -832,6 +841,8 @@ test('all possibilities', () => {
       'mt/h',
       'mu',
       'nC',
+      'nS/m',
+      'nS/cm',
       'nm',
       'Nm',
       'nm2',
@@ -854,6 +865,8 @@ test('all possibilities', () => {
       'oz',
       'ozf-in',
       'pC',
+      'pS/m',
+      'pS/cm',
       'pnt',
       'pnt/h',
       'pnt/min',
@@ -870,6 +883,8 @@ test('all possibilities', () => {
       'rad/s',
       'rpm',
       's',
+      'S/m',
+      'S/cm',
       's/m',
       's/ft',
       't',
@@ -899,6 +914,7 @@ test('all possibilities', () => {
       'μm',
       'μm2',
       'μC',
+      'μS/cm',
       'μA',
       'μV',
       'pcs',
@@ -938,6 +954,32 @@ test('pieces possibilities', () => {
       'scores',
       'sm-gr',
       'trio',
+    ];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('electrical conductivity possibilities', () => {
+  const convert = configureMeasurements<
+    'electricalConductivity',
+    ElectricalConductivitySystems,
+    ElectricalConductivityUnits
+  >({
+    electricalConductivity,
+  });
+  const actual = convert().possibilities('electricalConductivity'),
+    expected = [
+      'S/m',
+      'dS/m',
+      'mS/m',
+      'μS/m',
+      'nS/m',
+      'pS/m',
+      'S/cm',
+      'dS/cm',
+      'mS/cm',
+      'μS/cm',
+      'nS/cm',
+      'pS/cm',
     ];
   expect(actual.sort()).toEqual(expected.sort());
 });

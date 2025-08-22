@@ -3,6 +3,7 @@ import acceleration, {
   AccelerationSystems,
   AccelerationUnits,
 } from './acceleration.js';
+import acidity, { AciditySystems, AcidityUnits } from './acidity.js';
 import angle, { AngleSystems, AngleUnits } from './angle.js';
 import apparentPower, {
   ApparentPowerSystems,
@@ -55,6 +56,7 @@ import volumeFlowRate, {
 
 export type AllMeasuresSystems =
   | AccelerationSystems
+  | AciditySystems
   | AngleSystems
   | ApparentPowerSystems
   | AreaSystems
@@ -86,6 +88,7 @@ export type AllMeasuresSystems =
 
 export type AllMeasuresUnits =
   | AccelerationUnits
+  | AcidityUnits
   | AngleUnits
   | ApparentPowerUnits
   | AreaUnits
@@ -117,6 +120,7 @@ export type AllMeasuresUnits =
 
 export type AllMeasures =
   | 'acceleration'
+  | 'acidity'
   | 'angle'
   | 'apparentPower'
   | 'area'
@@ -151,6 +155,7 @@ const allMeasures: Record<
   Measure<AllMeasuresSystems, AllMeasuresUnits>
 > = {
   acceleration,
+  acidity,
   angle,
   apparentPower,
   area,

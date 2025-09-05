@@ -723,6 +723,8 @@ test('all possibilities', () => {
       'ft3/s',
       'g',
       'g-force',
+      'g/L',
+      'g/mL',
       'gal',
       'gal/h',
       'gal/min',
@@ -755,6 +757,7 @@ test('all possibilities', () => {
       'kanna',
       'kcal',
       'kg',
+      'kg/m3',
       'kgf',
       'kkp',
       'kJ',
@@ -816,6 +819,8 @@ test('all possibilities', () => {
       'mC',
       'mcg',
       'mg',
+      'mg/L',
+      'mg/mL',
       'mH2O',
       'mS/m',
       'mS/cm',
@@ -912,6 +917,7 @@ test('all possibilities', () => {
       'yd3/min',
       'yd3/s',
       'year',
+      'µg/L',
       'μm',
       'μm2',
       'μC',
@@ -984,6 +990,8 @@ test('electrical conductivity possibilities', () => {
       'nS/cm',
       'pS/cm',
     ];
+  expect(actual.sort()).toEqual(expected.sort());
+});
 
 test('acidity possibilities', () => {
   const convert = configureMeasurements<

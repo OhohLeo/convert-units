@@ -27,6 +27,10 @@ import illuminance, {
 } from './illuminance.js';
 import length, { LengthSystems, LengthUnits } from './length.js';
 import mass, { MassSystems, MassUnits } from './mass.js';
+import massConcentration, {
+  MassConcentrationSystems,
+  MassConcentrationUnits,
+} from './massConcentration.js';
 import massFlowRate, {
   MassFlowRateSystems,
   MassFlowRateUnits,
@@ -74,6 +78,7 @@ export type AllMeasuresSystems =
   | IlluminanceSystems
   | LengthSystems
   | MassSystems
+  | MassConcentrationSystems
   | MassFlowRateSystems
   | PaceSystems
   | PartsPerSystems
@@ -107,6 +112,7 @@ export type AllMeasuresUnits =
   | IlluminanceUnits
   | LengthUnits
   | MassUnits
+  | MassConcentrationUnits
   | MassFlowRateUnits
   | PaceUnits
   | PartsPerUnits
@@ -140,6 +146,7 @@ export type AllMeasures =
   | 'illuminance'
   | 'length'
   | 'mass'
+  | 'massConcentration'
   | 'massFlowRate'
   | 'pace'
   | 'partsPer'
@@ -176,6 +183,7 @@ const allMeasures: Record<
   illuminance,
   length,
   mass,
+  massConcentration,
   massFlowRate,
   pace,
   partsPer,

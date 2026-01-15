@@ -77,5 +77,8 @@
     "fraction"
   ],
   "author": "Ben Ng <me@benng.me> (http://benng.me)",
-  "license": "MIT"
+  "license": "MIT",
+  "overrides": {
+    "diff": ">=8.0.3"
+  }
 }

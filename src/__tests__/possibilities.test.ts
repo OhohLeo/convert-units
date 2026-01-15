@@ -35,6 +35,10 @@ import illuminance, {
 } from '../definitions/illuminance';
 import length, { LengthSystems, LengthUnits } from '../definitions/length';
 import mass, { MassSystems, MassUnits } from '../definitions/mass';
+import massConcentration, {
+  MassConcentrationSystems,
+  MassConcentrationUnits,
+} from '../definitions/massConcentration';
 import massFlowRate, {
   MassFlowRateSystems,
   MassFlowRateUnits,
@@ -172,6 +176,19 @@ test('mass flow rate possibilities', () => {
   });
   const actual = convert().possibilities('massFlowRate'),
     expected = ['kg/h', 'kg/min', 'kg/s', 'lb/h', 'lb/s', 'mt/h'];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('mass concentration possibilities', () => {
+  const convert = configureMeasurements<
+    'massConcentration',
+    MassConcentrationSystems,
+    MassConcentrationUnits
+  >({
+    massConcentration,
+  });
+  const actual = convert().possibilities('massConcentration'),
+    expected = ['mg/L', 'g/L', 'µg/L', 'kg/m3', 'g/mL', 'mg/mL'];
   expect(actual.sort()).toEqual(expected.sort());
 });
 

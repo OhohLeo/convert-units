@@ -55,12 +55,11 @@
     "lint": "eslint src",
     "publint": "publint",
     "format": "prettier --write src",
-    "compile": "tsc -p ./tsconfig.json && tsc -p ./tsconfig.cjs.json && tsc -p ./tsconfig.umd.json"
+    "compile": "tsc -p ./tsconfig.json && tsc -p ./tsconfig.cjs.json"
   },
   "files": [
     "lib/esm/**/!(*.tsbuildinfo)",
     "lib/cjs/**/!(*.tsbuildinfo)",
-    "lib/umd/**/!(*.tsbuildinfo)",
     "LICENSE",
     "README.md",
     "package.json"

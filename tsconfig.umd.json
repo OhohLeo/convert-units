@@ -1,7 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "ignoreDeprecations": "5.0",
     "module": "UMD",
+    "moduleResolution": "Node",
     "outDir": "./lib/umd"
   }
 }

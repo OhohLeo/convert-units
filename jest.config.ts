@@ -9,6 +9,9 @@ const jestConfig: JestConfigWithTsJest = {
     '^.+\\.ts?$': [
       'ts-jest',
       {
+        tsconfig: {
+          types: ['jest', 'node'],
+        },
         diagnostics: {
           ignoreCodes: ['TS151001'],
           exclude: ['!**/*.(spec|test).ts'],

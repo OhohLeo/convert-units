@@ -10,10 +10,11 @@ scratch
 coverage
 lib/*
 !lib/**/
+# Track the compiled cjs/esm output so the package works as a git dependency
+# (Yarn Berry packs the files whitelist and does not build on install).
+!lib/cjs/**
+!lib/esm/**
 lib/umd/*
-lib/esm/*
-lib/cjs/*
 lib/types/*
-!lib/esm/package.json
-!lib/cjs/package.json
+lib/**/*.tsbuildinfo
 convert-units-*.tgz
